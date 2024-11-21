@@ -114,7 +114,7 @@ This project meets all the requirements specified in the task, following Angular
 
 # Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) 
 
 ## Development server
 
