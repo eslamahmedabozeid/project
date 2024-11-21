@@ -1,0 +1,340 @@
+/* You can add global styles to this file, and also import other style files */
+
+// تعريف المتغيرات
+$primary-color: #ff523b;
+$dark-primary-color: #563434;
+$text-color: #555;
+$light-gray: #8a8a8a;
+$black: #000;
+$container-max-width: 1300px;
+$small-container-max-width: 1080px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    nav {
+        flex: 1;
+        text-align: right;
+        ul {
+            display: inline-block;
+            list-style-type: none;
+            li {
+                display: inline-block;
+                margin-right: 20px;
+                a {
+                    text-decoration: none;
+                    color: $text-color;
+                }
+            }
+        }
+    }
+}
+
+p {
+    color: $text-color;
+}
+
+.container,
+.small-container {
+    max-width: $container-max-width;
+    margin: auto;
+    padding: 0 25px;
+    &.small-container {
+        max-width: $small-container-max-width;
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .col-2 {
+        flex-basis: 50%;
+        min-width: 300px;
+        img {
+            max-width: 100%;
+            padding: 50px 0;
+        }
+        h1 {
+            font-size: 50px;
+            line-height: 60px;
+            margin: 25px 0;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    background: $primary-color;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+    &:hover {
+        background: $dark-primary-color;
+    }
+}
+
+.header {
+    background: radial-gradient(#fff, #ffd6d6);
+    .row {
+        // margin-top: 70px;
+    }
+}
+
+.categories {
+    margin: 70px 0;
+}
+
+.col-3 {
+    flex-basis: 30%;
+    min-width: 250px;
+    margin-bottom: 30px;
+    img {
+        width: 100%;
+    }
+}
+
+.col-4 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+    &:hover {
+        transform: translateY(-5px);
+    }
+    img {
+        width: 100%;
+    }
+    p {
+        font-size: 14px;
+    }
+    h4 {
+        color: $text-color;
+        font-weight: normal;
+    }
+    .rating .fa {
+        color: $primary-color;
+    }
+}
+
+.title {
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: $text-color;
+    &::after {
+        content: '';
+        background: $primary-color;
+        width: 80px;
+        height: 5px;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+// العروض
+.offer {
+    background: radial-gradient(#fff, #ffd6d6);
+    margin-top: 80px;
+    padding: 30px 0;
+    .offer-img {
+        padding: 50px;
+    }
+}
+
+small {
+    color: $text-color;
+}
+
+// التقييمات
+.testimonial {
+    margin-top: 100px;
+    .col-3 {
+        text-align: center;
+        padding: 40px 20px;
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.5s;
+        &:hover {
+            transform: translateY(-10px);
+        }
+        img {
+            width: 50px;
+            margin-top: 20px;
+            border-radius: 50%;
+        }
+        p {
+            font-size: 12px;
+            margin: 12px 0;
+            color: #777;
+        }
+        h3 {
+            font-weight: 600;
+            color: $text-color;
+            font-size: 16px;
+        }
+    }
+}
+
+// العلامات التجارية
+.brands {
+    margin: 100px auto;
+    .col-5 {
+        width: 160px;
+        img {
+            width: 100%;
+            cursor: pointer;
+            filter: grayscale(100%);
+            &:hover {
+                filter: grayscale(0);
+            }
+        }
+    }
+}
+
+// الفوتر
+.footer {
+    background: $black;
+    color: $light-gray;
+    font-size: 14px;
+    padding: 60px 0 20px;
+    p,
+    h3 {
+        color: $light-gray;
+        &:nth-child(2) {
+            color: #fff;
+        }
+    }
+    hr {
+        border: none;
+        background: #b5b5b5;
+        height: 1px;
+        margin: 20px 0;
+    }
+    .copyright {
+        text-align: center;
+    }
+    .footer-col-1,
+    .footer-col-2,
+    .footer-col-3,
+    .footer-col-4 {
+        min-width: 250px;
+        margin-bottom: 20px;
+        &:nth-child(1) {
+            flex-basis: 30%;
+        }
+        &:nth-child(2) {
+            flex: 1;
+            text-align: center;
+            img {
+                width: 180px;
+                margin-bottom: 20px;
+            }
+        }
+        &:nth-child(3),
+        &:nth-child(4) {
+            flex-basis: 12%;
+            text-align: center;
+        }
+    }
+    ul {
+        list-style-type: none;
+    }
+}
+
+// المنتج الفردي
+.single-product {
+    margin-top: 80px;
+    .col-2 {
+        padding: 20px;
+        img {
+            padding: 0;
+        }
+        h4 {
+            margin: 20px 0;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        select {
+            display: block;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        input {
+            width: 50px;
+            height: 40px;
+            padding-left: 10px;
+            font-size: 20px;
+            margin: 0 10px;
+            border: 1px solid $primary-color;
+            &:focus {
+                outline: none;
+            }
+        }
+        .fa {
+            color: $primary-color;
+            margin-left: 10px;
+        }
+    }
+    .small-img-row {
+        display: flex;
+        justify-content: space-between;
+        .small-img-col {
+            flex-basis: 24%;
+            cursor: pointer;
+        }
+    }
+}
+
+// الاستجابة للشاشات الصغيرة
+@media only screen and (max-width: 800px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+        li {
+            display: block;
+            margin: 10px 0;
+            a {
+                color: white;
+            }
+        }
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .row {
+        text-align: center;
+        .col-2,
+        .col-3,
+        .col-4 {
+            flex-basis: 100%;
+        }
+    }
+}

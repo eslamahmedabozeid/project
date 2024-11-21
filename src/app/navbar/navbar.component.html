@@ -1,0 +1,20 @@
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a routerLink="/"><img src="/assets/images/logo.png" alt="logo" width="125px"></a>
+            </div>
+            <nav>
+                <ul [class.active]="menuOpen">
+                    <li><a routerLink="/">Home</a></li>
+                    <li><a routerLink="/products">Products</a></li>
+                    <li><a routerLink="/orders">Orders</a></li>
+                </ul>
+            </nav>
+            <a routerLink="/add-order">
+                <img src="/assets/images/cart.png" width="30px" height="30px">
+            </a>
+            <img src="/assets/images/menu.png" class="menu-icon" (click)="toggleMenu()">
+        </div>
+    </div>
+</div>

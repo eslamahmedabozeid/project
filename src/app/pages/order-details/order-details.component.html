@@ -1,0 +1,36 @@
+<div class="order-details-container">
+    <h2>Order Details</h2>
+    <h3>Order ID: {{ order?.OrderId }}</h3>
+    <h4>Order Date: {{ customer?.RegisterDate | date: 'medium' }}</h4>
+    <h4>Payment Type: {{ order?.PaymentType }}</h4>
+
+    <div class="customer-info">
+        <h3>Customer Details</h3>
+        <p><strong>Name:</strong> {{ customer?.Name }}</p>
+        <p><strong>Email:</strong> {{ customer?.Email }}</p>
+        <p><strong>Phone:</strong> {{ customer?.Phone }}</p>
+        <p><strong>Address:</strong> {{ customer?.Address }}</p>
+    </div>
+
+    <div class="order-products">
+        <h3>Products</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of order?.Products">
+                    <td>{{ getProduct(item.ProductId)?.ProductName }}</td>
+                    <td>{{ item.Quantity }}</td>
+                    <td>{{ getProduct(item.ProductId)?.ProductPrice | currency }}</td>
+                    <td>{{ (getProduct(item.ProductId)?.ProductPrice * item.Quantity) | currency }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

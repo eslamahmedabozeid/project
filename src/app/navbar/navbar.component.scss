@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        li {
+            a {
+                text-decoration: none;
+                color: #333;
+                &:hover {
+                    color: #f00;
+                }
+            }
+        }
+    }
+    .menu-icon {
+        display: none; // Hides the icon on large screens
+        cursor: pointer;
+        width: 9%;
+        margin: 0 10px;
+    }
+    @media (max-width: 768px) {
+        nav ul {
+            display: none; // Hide menu on small screens
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background: #fff;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        nav ul.active {
+            display: flex; // Show menu on click
+        }
+        .menu-icon {
+            display: block; // Show icon on small screens
+        }
+    }
+}

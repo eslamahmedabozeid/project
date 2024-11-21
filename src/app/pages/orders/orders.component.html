@@ -1,0 +1,31 @@
+<div class="orders-container">
+    <h2 class="title">Orders</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Total Price</th>
+                <th>Payment Method</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Bind pagination to the orders list -->
+            <tr *ngFor="let order of orders | paginate: { itemsPerPage: 5, currentPage: currentPage }">
+                <td>{{ order.OrderId }}</td>
+                <td>{{ order.OrderDate ? (order.OrderDate | date: 'medium') : 'Invalid Date' }}</td>
+                <td>{{ calculateTotal(order.Products) | currency }}</td>
+                <td>{{ order.PaymentType }}</td>
+                <td>
+                    <button [routerLink]="['/order-details', order.OrderId]">View Details</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Pagination Controls -->
+    <div class="text-center Pagination">
+        <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+    </div>
+</div>

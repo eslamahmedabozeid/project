@@ -1,0 +1,25 @@
+.order-details-container {
+    padding: 1rem;
+}
+
+.customer-info,
+.order-products {
+    margin-top: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+thead {
+    background-color: #f9f9f9;
+}
+
+th,
+td {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    text-align: center;
+}

@@ -1,0 +1,73 @@
+<div class="small-container cart-page">
+    <h2>Create New Order</h2>
+
+    <!-- Products Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of cartItems">
+                <td>
+                    <div class="cart-info">
+                        <img [src]="item.ProductImg" alt="{{ item.ProductName }}">
+                        <div>
+                            <p>{{ item.ProductName }}</p>
+                            <small>Price: {{ item.ProductPrice | currency }}</small>
+                            <br />
+                            <a (click)="removeFromCart(item)">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="quantity-control">
+                        <button (click)="decreaseQuantity(item)">-</button>
+                        <span>{{ item.Quantity }}</span>
+                        <button (click)="increaseQuantity(item)">+</button>
+                    </div>
+                </td>
+                <td>{{ (item.ProductPrice * item.Quantity) | currency }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Total Price -->
+    <div class="total-price">
+        <table>
+            <tr>
+                <td>Subtotal</td>
+                <td>{{ subtotal | currency }}</td>
+            </tr>
+            <tr>
+                <td>Tax</td>
+                <td>{{ tax | currency }}</td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td>{{ total | currency }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Order Details -->
+    <div class="order-details">
+        <label for="customer">Select Customer:</label>
+        <select id="customer" [(ngModel)]="newOrder.UserId">
+          <option *ngFor="let customer of customers" [value]="customer.Id">
+              {{ customer.Name }}
+          </option>
+      </select>
+
+        <label for="payment">Payment Type:</label>
+        <select id="payment" [(ngModel)]="newOrder.PaymentType">
+          <option value="Cash">Cash</option>
+          <option value="Online">Online</option>
+      </select>
+
+        <!-- <button (click)="submitOrder()">Place Order</button> -->
+    </div>
+</div>
